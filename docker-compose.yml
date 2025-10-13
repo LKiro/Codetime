@@ -1,0 +1,47 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: codetime-app
+    environment:
+      - PORT=3000
+      - WS_PATH=/ws
+      - CODETIME_CONCURRENCY_POLICY=exclusive
+      - RATE_HTTP_PER_MIN=1200
+      - RATE_WS_PER_MIN=120
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=codetime
+      - DB_PASSWORD=codetime
+      - DB_DATABASE=codetime
+      - SESSION_SECRET=${SESSION_SECRET:-change-me}
+      - DEV_TOKEN_AUTO=${DEV_TOKEN_AUTO:-true}
+      - TOKEN_PEPPER=${TOKEN_PEPPER:-}
+      # - GITHUB_CLIENT_ID=
+      # - GITHUB_CLIENT_SECRET=
+      # - GITHUB_CALLBACK_URL=http://localhost:3000/auth/github/callback
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    container_name: codetime-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: codetime
+      MYSQL_USER: codetime
+      MYSQL_PASSWORD: codetime
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+
+volumes:
+  mysql-data:
+

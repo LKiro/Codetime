@@ -1,0 +1,20 @@
+{
+  "name": "codetime-web",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 5173"
+  },
+  "dependencies": {
+    "vue": "^3.5.12",
+    "chart.js": "^4.4.4",
+    "vue-chartjs": "^5.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.1.4",
+    "vite": "^5.4.10"
+  }
+}

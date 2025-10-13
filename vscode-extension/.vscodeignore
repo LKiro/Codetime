@@ -1,0 +1,48 @@
+**/*.map
+**/*.ts
+node_modules/.bin
+**/test
+.vscode/**
+.git/**
+{
+  "name": "codetime-vscode",
+  "displayName": "Codetime",
+  "description": "Send 60s heartbeats with current project to a Codetime server (HTTP+WS on the same port).",
+  "version": "0.0.1",
+  "publisher": "your-name",
+  "engines": { "vscode": "^1.70.0" },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onStartupFinished",
+    "workspaceContains:**/*"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "codetime.openDashboard", "title": "Codetime: Open Dashboard" }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Codetime",
+      "properties": {
+        "codetime.serverUrl": { "type": "string", "default": "ws://localhost:3000/ws", "description": "WebSocket server URL (e.g., ws://localhost:3000/ws)" },
+        "codetime.httpBase": { "type": "string", "default": "http://localhost:3000", "description": "HTTP base URL used to fetch stats and open dashboard" },
+        "codetime.authToken": { "type": "string", "default": "", "description": "Auth token for Codetime server" },
+        "codetime.heartbeatIntervalSeconds": { "type": "number", "default": 60, "minimum": 10, "description": "Heartbeat interval in seconds" },
+        "codetime.idleTimeoutSeconds": { "type": "number", "default": 120, "minimum": 30, "description": "Idle timeout (no editor activity) to pause heartbeats" },
+        "codetime.projectNameStrategy": { "type": "string", "enum": ["gitRoot", "folder"], "default": "gitRoot", "description": "How to determine project name" }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "echo no-lint && exit 0"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.10",
+    "vscode": "^1.1.37"
+  }
+}
+

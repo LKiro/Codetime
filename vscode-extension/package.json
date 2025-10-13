@@ -1,0 +1,30 @@
+{
+  "name": "codetime-vscode",
+  "displayName": "Codetime",
+  "description": "Send 60s heartbeats with current project to a Codetime server (HTTP+WS on the same port).",
+  "version": "0.0.1",
+  "publisher": "your-name",
+  "engines": { "vscode": "^1.70.0" },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished", "workspaceContains:**/*"],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [ { "command": "codetime.openDashboard", "title": "Codetime: Open Dashboard" } ],
+    "configuration": {
+      "type": "object",
+      "title": "Codetime",
+      "properties": {
+        "codetime.serverUrl": { "type": "string", "default": "ws://localhost:3000/ws", "description": "WebSocket server URL" },
+        "codetime.httpBase": { "type": "string", "default": "http://localhost:3000", "description": "HTTP base URL" },
+        "codetime.authToken": { "type": "string", "default": "", "description": "Auth token for Codetime server" },
+        "codetime.heartbeatIntervalSeconds": { "type": "number", "default": 60 },
+        "codetime.idleTimeoutSeconds": { "type": "number", "default": 120 },
+        "codetime.projectNameStrategy": { "type": "string", "enum": ["gitRoot", "folder"], "default": "gitRoot" }
+      }
+    }
+  },
+  "scripts": { "lint": "echo no-lint && exit 0" },
+  "dependencies": { "ws": "^8.18.0" },
+  "devDependencies": { "@types/ws": "^8.5.10", "vscode": "^1.1.37" }
+}
+
